@@ -93,7 +93,8 @@ for (let i = 0; i < posts.length; i++){
     console.log('nuova data',newDate);
 
   
- 
+
+    
     // if (authorPostsImage == null){
     //     let newAuthorPostsImage = authorPostsImage;
         
@@ -138,6 +139,8 @@ for (let i = 0; i < posts.length; i++){
   }
 
 
+
+  container.innerHTML = html
 
 //   document.querySelector('js-like-button').addEventListener('click', growingLikes(likesPosts))
 
