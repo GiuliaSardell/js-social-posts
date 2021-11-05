@@ -1,3 +1,6 @@
+let html = '';
+const container = document.getElementById('container');
+
 const posts = [
     {
         "id": 1,
@@ -55,3 +58,96 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+
+for (let i = 0; i < posts.length; i++){
+    const onePosts = posts[i]
+    console.log('onePosts',onePosts)
+  
+    const idPosts = onePosts.id
+    console.log('idPosts ',idPosts)
+  
+    const contentPosts = onePosts.content
+    console.log('contentPosts: ',contentPosts)
+  
+    const mediaPosts = onePosts.media
+    console.log('mediaPosts ',mediaPosts)
+  
+    const authorPosts = onePosts.author
+    console.log('authorPosts ',authorPosts)
+    const authorPostsName = authorPosts.name
+    console.log('author post nome', authorPostsName)
+    const authorPostsImage = authorPosts.image
+    console.log('author post immagine', authorPostsImage)
+
+    const likesPosts = onePosts.likes
+    console.log('likesTeam: ',likesPosts)
+
+    const createdPosts = onePosts.created
+    console.log('createdPosts ',createdPosts)
+
+
+    let createdPostsAr = createdPosts.split('-');
+    let newDate = createdPostsAr[1] + '/' + createdPostsAr[2] + '/' + createdPostsAr[0];
+    console.log('nuova data',newDate);
+
+  
+ 
+    // if (authorPostsImage == null){
+    //     let newAuthorPostsImage = authorPostsImage;
+        
+    //     newAuthorPostsImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBmfaerMMCR6jgdXwmlfYFycBhBCBKAXftOw&usqp=CAU'
+    //     console.log(newAuthorPostsImage)
+    // }
+  
+    
+  
+    html +=`<div class="post">
+    <div class="post__header">
+        <div class="post-meta">                    
+            <div class="post-meta__icon">
+                <img class="profile-pic" src="${authorPostsImage}" alt="${authorPostsName}">                    
+            </div>
+            <div class="post-meta__data">
+                <div class="post-meta__author">${authorPostsName}</div>
+                <div class="post-meta__time">${newDate}</div>
+            </div>                    
+        </div>
+    </div>
+    <div class="post__text">${contentPosts}</div>
+    <div class="post__image">
+        <img src="${mediaPosts}" alt="">
+    </div>
+    <div class="post__footer">
+        <div class="likes js-likes">
+            <div class="likes__cta">
+                <a class="like-button  js-like-button" href="#" data-postid="1">
+                    <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                    <span class="like-button__label">Mi Piace</span>
+                </a>
+            </div>
+            <div class="likes__counter">
+                Piace a <b id="like-counter-1" class="js-likes-counter">${likesPosts}</b> persone
+            </div>
+        </div> 
+    </div>            
+</div>`
+  
+  
+  }
+
+
+
+//   document.querySelector('js-like-button').addEventListener('click', growingLikes(likesPosts))
+
+//   button.addEventListener('')
+  
+
+// document.getElementById('js-like-button').addEventListener('click', growingLikes(likesPosts))
+
+
+//   function growingLikes(likes){
+//       return likes++
+
+//   }
